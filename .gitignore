@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Models
+*.pkl
+
+# Environment
+.env
+
+# macOS
+.DS_Store
