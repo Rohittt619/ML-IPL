@@ -1,55 +1,158 @@
-# 🏏 IPL First Innings Score Prediction
+# 🏏 IPL First Innings Score Predictor
 
-> Predicting the final first innings score of an IPL match using Machine Learning — given live match conditions.
+Predict the final first innings score of an IPL match using Machine Learning and Streamlit.
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+---
 
-## 📌 Problem Statement
-Given batting team, bowling team, venue, current score, overs played, and wickets fallen — predict the final first innings total. Real-world use: live match score projections.
+## 🚀 Features
 
-## 🛠️ Tech Stack
-Python · Pandas · NumPy · Scikit-learn · Matplotlib · Seaborn · Jupyter Notebook
+- Interactive Streamlit Web App
+- Predicts final first innings score
+- Machine Learning based prediction
+- Clean and simple UI
+- Real-time score prediction
+- Feature Engineering pipeline
+- Model saved using Joblib
 
-## 📊 Dataset
-`IPL_First_Inning_Data.csv` — historical IPL match data (2008–2019)
-Features: batting_team, bowling_team, venue, runs, wickets, overs, runs_last_5, wickets_last_5
+---
 
-## 🔍 Key Steps
-1. **EDA** — score distributions, team-wise averages, venue impact analysis
-2. **Feature engineering** — current run rate, wickets remaining, runs in last 5 overs
-3. **Preprocessing** — OneHotEncoding for teams/venues, train-test split (80/20)
-4. **Model training** — Linear Regression baseline → Random Forest for improvement
-5. **Evaluation** — MAE and RMSE comparison across models
+## 🛠 Tech Stack
 
-## 📈 Model Results
-| Model | MAE | RMSE |
-|---|---|---|
-| Linear Regression | ~12 runs | ~16 runs |
-| Random Forest | **~8 runs** | **~11 runs** |
+- Python
+- Pandas
+- NumPy
+- Scikit-Learn
+- Streamlit
+- Joblib
 
-Random Forest outperformed baseline by 33% on MAE.
+---
 
-## 🔑 Key Findings
-- Venue significantly impacts scoring — DY Patil Stadium averages 20+ runs more than Chepauk
-- Current run rate + wickets remaining are the two strongest predictors
-- Teams batting first at home venues score ~15 runs higher on average
+## 📂 Project Structure
 
-## 🚀 How to Run
-```bash
-git clone https://github.com/Rohittt619/ML-IPL
-cd ML-IPL
-pip install pandas numpy scikit-learn matplotlib seaborn jupyter
-jupyter notebook "IPL First Innings Score Prediction.ipynb"
+```
+ML-IPL
+│
+├── data
+├── models
+├── outputs
+├── scripts
+├── app.py
+├── requirements.txt
+└── README.md
 ```
 
-## 📁 Files
-| File | Description |
-|---|---|
-| `IPL First Innings Score Prediction.ipynb` | Main analysis notebook |
-| `IPL_First_Inning_Data.csv` | Raw dataset |
-| `requirements.txt` | Python dependencies |
+---
+
+## 📊 Dataset
+
+The project uses two IPL datasets.
+
+- matches.csv
+- deliveries.csv
+
+Historical IPL matches from 2008–2019 were used to train the prediction model.
+
+---
+
+## ⚙️ Feature Engineering
+
+The following features are used for prediction:
+
+- Batting Team
+- Bowling Team
+- Current Score
+- Current Wickets
+- Overs Completed
+- Current Run Rate
+- Runs in Last 5 Overs
+- Wickets in Last 5 Overs
+
+---
+
+## 🤖 Machine Learning Models
+
+The following algorithms were trained and compared:
+
+- Linear Regression
+- Decision Tree Regressor
+- Random Forest Regressor
+
+The best-performing model was saved as:
+
+```
+models/best_model.pkl
+```
+
+---
+
+## 📈 Model Performance
+
+| Model | MAE | RMSE |
+|------|------:|------:|
+| Linear Regression | 13.42 | 18.01 |
+| Decision Tree | 3.44 | 11.01 |
+| Random Forest | 7.53 | 10.90 |
+
+---
+
+## 🖥 Application
+
+### Home Page
+
+![Home](outputs/app_home.png)
+
+---
+
+### Prediction
+
+![Prediction](outputs/prediction.png)
+
+---
+
+## ▶️ Run Locally
+
+Clone the repository
+
+```bash
+git clone https://github.com/Rohittt619/ML-IPL.git
+```
+
+Go inside project
+
+```bash
+cd ML-IPL
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Streamlit app
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 📌 Future Improvements
+
+- XGBoost Model
+- Hyperparameter Tuning
+- Deployment on Streamlit Cloud
+- Docker Support
+- Azure Deployment
+
+---
 
 ## 👨‍💻 Author
-**Rohit Rathod** · [LinkedIn](https://linkedin.com/in/rohit-rathod-19442a228) · [GitHub](https://github.com/Rohittt619)
+
+**Rohit Rathod**
+
+GitHub:
+https://github.com/Rohittt619
+
+LinkedIn:
+https://linkedin.com/in/rohit-rathod-19442a228
